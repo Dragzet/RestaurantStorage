@@ -62,7 +62,6 @@ func main() {
 		}
 	}()
 
-	_ = storage
 	logger.Info("Server started successfully")
 	<-signalChan
 

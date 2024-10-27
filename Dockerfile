@@ -15,7 +15,6 @@ WORKDIR /root/
 COPY --from=build /RestaurantAPI/app /RestaurantAPI/app
 COPY ./logs ./logs
 COPY ./config/config.yaml ./config/config.yaml
-COPY .env .env
 
 EXPOSE 8080
 
