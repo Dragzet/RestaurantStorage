@@ -1,0 +1,39 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/root/logs
+    networks:
+      - app_network
+    depends_on:
+      - db
+    environment:
+      - EMAIL_HOST=smtp.yandex.ru
+      - EMAIL_PORT=465
+      - EMAIL_USER=system-project-management@yandex.ru
+      - EMAIL_PASS=pjolfmygivbginka
+
+  db:
+    container_name: appDB
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: appDB
+    volumes:
+      - data:/var/lib/postgresql/data
+      - ./sql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+
+volumes:
+  data:
+
+networks:
+  app_network:
+    driver: bridge

@@ -1,1 +1,95 @@
 2024-10-25T16:03:24+03:00 [Info][app] Starting the application...
+2024-10-27T13:48:16Z [Info][app] Starting the application...
+2024-10-27T13:49:30Z [Info][app] Starting the application...
+2024-10-27T13:49:56Z [Info][app] Starting the application...
+2024-10-27T13:50:29Z [Info][app] Starting the application...
+2024-10-27T13:50:49Z [Info][app] Starting the application...
+2024-10-27T13:51:16Z [Info][app] Starting the application...
+2024-10-27T16:57:28+03:00 [Info][app] Storage connected successfully
+2024-10-27T16:57:28+03:00 [Info][app] Server started successfully
+2024-10-27T16:57:38+03:00 [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: failed to connect to `user=admin database=appDB`: hostname resolving error: lookup db: no such host)
+2024-10-27T16:57:52+03:00 [Info][app] Shutting down the server
+2024-10-27T13:58:42Z [Info][app] Starting the application...
+2024-10-27T13:59:57Z [Info][app] Storage connected successfully
+2024-10-27T13:59:57Z [Info][app] Server started successfully
+2024-10-27T13:59:58Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:03:14Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:05:00Z [Info][app] Shutting down the server
+2024-10-27T14:05:22Z [Info][app] Storage connected successfully
+2024-10-27T14:05:22Z [Info][app] Server started successfully
+2024-10-27T14:07:11Z [Info][app] Shutting down the server
+2024-10-27T14:07:29Z [Info][app] Storage connected successfully
+2024-10-27T14:07:29Z [Info][app] Server started successfully
+2024-10-27T14:07:35Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:11:46Z [Info][app] Shutting down the server
+2024-10-27T14:11:47Z [Info][app] Storage connected successfully
+2024-10-27T14:11:47Z [Info][app] Server started successfully
+2024-10-27T14:12:13Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:15:36Z [Info][app] Shutting down the server
+2024-10-27T14:15:37Z [Info][app] Storage connected successfully
+2024-10-27T14:15:37Z [Info][app] Server started successfully
+2024-10-27T14:15:53Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:16:49Z [Info][app] Shutting down the server
+2024-10-27T14:16:50Z [Info][app] Storage connected successfully
+2024-10-27T14:16:50Z [Info][app] Server started successfully
+2024-10-27T14:16:55Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:17:40Z [Info][app] Shutting down the server
+2024-10-27T14:17:52Z [Info][app] Storage connected successfully
+2024-10-27T14:17:52Z [Info][app] Server started successfully
+2024-10-27T14:18:00Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: AddProduct: ERROR: syntax error at or near "," (SQLSTATE 42601))
+2024-10-27T14:19:54Z [Info][app] Shutting down the server
+2024-10-27T14:19:55Z [Info][app] Storage connected successfully
+2024-10-27T14:19:55Z [Info][app] Server started successfully
+2024-10-27T14:21:57Z [Info][app] Shutting down the server
+2024-10-27T14:21:57Z [Info][app] Storage connected successfully
+2024-10-27T14:21:57Z [Info][app] Server started successfully
+2024-10-27T14:22:59Z [Info][app] Shutting down the server
+2024-10-27T14:23:00Z [Info][app] Storage connected successfully
+2024-10-27T14:23:00Z [Info][app] Server started successfully
+2024-10-27T14:23:37Z [Info][app] Shutting down the server
+2024-10-27T14:23:37Z [Info][app] Storage connected successfully
+2024-10-27T14:23:37Z [Info][app] Server started successfully
+2024-10-27T14:24:15Z [Info][app] Shutting down the server
+2024-10-27T14:24:16Z [Info][app] Storage connected successfully
+2024-10-27T14:24:16Z [Info][app] Server started successfully
+2024-10-27T14:24:59Z [Info][app] Shutting down the server
+2024-10-27T14:25:00Z [Info][app] Storage connected successfully
+2024-10-27T14:25:00Z [Info][app] Server started successfully
+2024-10-27T14:25:36Z [Info][app] Shutting down the server
+2024-10-27T14:25:37Z [Info][app] Storage connected successfully
+2024-10-27T14:25:37Z [Info][app] Server started successfully
+2024-10-27T14:25:40Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=ProductDB: AddProduct: Product already exists)
+2024-10-27T14:25:47Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: number of field descriptions must equal number of destinations, got 4 and 3)
+2024-10-27T14:26:15Z [Info][app] Shutting down the server
+2024-10-27T14:26:16Z [Info][app] Storage connected successfully
+2024-10-27T14:26:16Z [Info][app] Server started successfully
+2024-10-27T14:26:19Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: number of field descriptions must equal number of destinations, got 4 and 3)
+2024-10-27T14:26:50Z [Info][app] Shutting down the server
+2024-10-27T14:26:50Z [Info][app] Storage connected successfully
+2024-10-27T14:26:50Z [Info][app] Server started successfully
+2024-10-27T14:27:44Z [Info][app] Shutting down the server
+2024-10-27T14:28:02Z [Info][app] Storage connected successfully
+2024-10-27T14:28:02Z [Info][app] Server started successfully
+2024-10-27T14:28:18Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=ProductDB: AddProduct: Product already exists)
+2024-10-27T14:29:30Z [Info][app] Shutting down the server
+2024-10-27T14:29:31Z [Info][app] Storage connected successfully
+2024-10-27T14:29:31Z [Info][app] Server started successfully
+2024-10-27T14:37:30Z [Info][app] Shutting down the server
+2024-10-27T14:37:31Z [Info][app] Storage connected successfully
+2024-10-27T14:37:31Z [Info][app] Server started successfully
+2024-10-27T14:37:43Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=ProductDB: AddProduct: Product already exists)
+2024-10-27T14:38:29Z [Info][app] Shutting down the server
+2024-10-27T14:38:30Z [Info][app] Storage connected successfully
+2024-10-27T14:38:30Z [Info][app] Server started successfully
+2024-10-27T14:39:19Z [Error][app] Failed to change product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: ChangeProduct: failed to encode args[1]: unable to encode 0 into text format for text (OID 25): cannot find encode plan)
+2024-10-27T14:39:31Z [Error][app] Failed to change product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: ChangeProduct: failed to encode args[1]: unable to encode 4 into text format for text (OID 25): cannot find encode plan)
+2024-10-27T14:40:32Z [Info][app] Shutting down the server
+2024-10-27T14:40:33Z [Info][app] Storage connected successfully
+2024-10-27T14:40:33Z [Info][app] Server started successfully
+2024-10-27T14:41:25Z [Info][app] Shutting down the server
+2024-10-27T14:41:26Z [Info][app] Storage connected successfully
+2024-10-27T14:41:26Z [Info][app] Server started successfully
+2024-10-27T14:41:54Z [Error][app] Failed to delete product%!(EXTRA string=error, *errors.errorString=Error in ProductDB: findProduct: no rows in result set)
+2024-10-27T14:47:01Z [Info][app] Shutting down the server
+2024-10-27T14:47:02Z [Info][app] Storage connected successfully
+2024-10-27T14:47:02Z [Info][app] Server started successfully
