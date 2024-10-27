@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    build: backend
     ports:
       - "8080:8080"
     volumes:
@@ -30,6 +30,13 @@ services:
       - "5432:5432"
     networks:
       - app_network
+
+  frontend:
+    build: frontend
+    ports:
+      - "3000:80"
+    networks:
+        - app_network
 
 volumes:
   data:

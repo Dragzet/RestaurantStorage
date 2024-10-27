@@ -8,6 +8,7 @@ import (
 	"RestaurantStorage/internal/storage/PostgreSQL"
 	"context"
 	"fmt"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	log "github.com/go-ozzo/ozzo-log"
 	"github.com/joho/godotenv"
@@ -44,6 +45,9 @@ func main() {
 	logger.Info("Storage connected successfully")
 	repo := repository.NewDB(storage)
 	router := gin.Default()
+	CORSconfig := cors.DefaultConfig()
+	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000"}
+	router.Use(cors.New(CORSconfig))
 	serv := service.NewService(repo)
 	handler := handlers.NewHandler(router, serv, logger)
 

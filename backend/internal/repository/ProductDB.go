@@ -48,12 +48,12 @@ func (d *DB) ChangeProduct(ctx context.Context, name string, amount int) error {
 		return err
 	}
 
-	lastProduct, err := d.GetProduct(ctx, name)
-	if err != nil {
-		return fmt.Errorf("Error in ProductDB: ChangeProduct: %s", err.Error())
-	}
-
-	amount = lastProduct.Amount + amount
+	//lastProduct, err := d.GetProduct(ctx, name)
+	//if err != nil {
+	//	return fmt.Errorf("Error in ProductDB: ChangeProduct: %s", err.Error())
+	//}
+	//
+	//amount = lastProduct.Amount + amount
 	_, err = d.Client.Query(ctx, stmt, name, amount)
 	if err != nil {
 		return fmt.Errorf("Error in ProductDB: ChangeProduct: %s", err.Error())

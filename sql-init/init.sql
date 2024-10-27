@@ -1,0 +1,6 @@
+CREATE TABLE products (
+    id SERIAL  PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    amount INTEGER NOT NULL,
+    image VARCHAR(255) NOT NULL
+);

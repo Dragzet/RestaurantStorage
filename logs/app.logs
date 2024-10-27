@@ -1,0 +1,68 @@
+2024-10-27T15:15:09Z [Info][app] Storage connected successfully
+2024-10-27T15:15:09Z [Info][app] Server started successfully
+2024-10-27T15:15:51Z [Info][app] Shutting down the server
+2024-10-27T15:15:55Z [Info][app] Storage connected successfully
+2024-10-27T15:15:55Z [Info][app] Server started successfully
+2024-10-27T15:39:43Z [Info][app] Shutting down the server
+2024-10-27T15:39:45Z [Info][app] Storage connected successfully
+2024-10-27T15:39:45Z [Info][app] Server started successfully
+2024-10-27T15:41:51Z [Info][app] Shutting down the server
+2024-10-27T15:41:51Z [Info][app] Storage connected successfully
+2024-10-27T15:41:51Z [Info][app] Server started successfully
+2024-10-27T15:45:57Z [Info][app] Shutting down the server
+2024-10-27T15:45:57Z [Info][app] Storage connected successfully
+2024-10-27T15:45:57Z [Info][app] Server started successfully
+2024-10-27T15:48:43Z [Info][app] Shutting down the server
+2024-10-27T15:48:44Z [Info][app] Storage connected successfully
+2024-10-27T15:48:44Z [Info][app] Server started successfully
+2024-10-27T15:51:05Z [Info][app] Shutting down the server
+2024-10-27T15:51:05Z [Info][app] Storage connected successfully
+2024-10-27T15:51:05Z [Info][app] Server started successfully
+2024-10-27T15:52:44Z [Info][app] Shutting down the server
+2024-10-27T15:52:44Z [Info][app] Storage connected successfully
+2024-10-27T15:52:44Z [Info][app] Server started successfully
+2024-10-27T15:54:25Z [Info][app] Shutting down the server
+2024-10-27T15:54:26Z [Info][app] Storage connected successfully
+2024-10-27T15:54:26Z [Info][app] Server started successfully
+2024-10-27T16:11:53Z [Info][app] Shutting down the server
+2024-10-27T16:11:57Z [Info][app] Storage connected successfully
+2024-10-27T16:11:57Z [Info][app] Server started successfully
+2024-10-27T16:12:36Z [Info][app] Shutting down the server
+2024-10-27T16:12:40Z [Info][app] Storage connected successfully
+2024-10-27T16:12:40Z [Info][app] Server started successfully
+2024-10-27T16:12:50Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:13:07Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:13:25Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:14:38Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:14:42Z [Info][app] Shutting down the server
+2024-10-27T16:14:46Z [Info][app] Storage connected successfully
+2024-10-27T16:14:46Z [Info][app] Server started successfully
+2024-10-27T16:14:47Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:14:53Z [Error][app] Failed to get products list%!(EXTRA string=error, *errors.errorString=Error in ProductDB: GetProductList: ERROR: relation "products" does not exist (SQLSTATE 42P01))
+2024-10-27T16:15:32Z [Info][app] Shutting down the server
+2024-10-27T16:15:48Z [Info][app] Storage connected successfully
+2024-10-27T16:15:48Z [Info][app] Server started successfully
+2024-10-27T16:16:39Z [Info][app] Shutting down the server
+2024-10-27T16:16:44Z [Info][app] Storage connected successfully
+2024-10-27T16:16:44Z [Info][app] Server started successfully
+2024-10-27T16:19:03Z [Info][app] Shutting down the server
+2024-10-27T16:19:03Z [Info][app] Storage connected successfully
+2024-10-27T16:19:03Z [Info][app] Server started successfully
+2024-10-27T16:27:39Z [Info][app] Shutting down the server
+2024-10-27T16:27:39Z [Info][app] Storage connected successfully
+2024-10-27T16:27:39Z [Info][app] Server started successfully
+2024-10-27T16:28:39Z [Info][app] Shutting down the server
+2024-10-27T16:28:39Z [Info][app] Storage connected successfully
+2024-10-27T16:28:39Z [Info][app] Server started successfully
+2024-10-27T16:29:05Z [Info][app] Shutting down the server
+2024-10-27T16:29:05Z [Info][app] Storage connected successfully
+2024-10-27T16:29:05Z [Info][app] Server started successfully
+2024-10-27T16:31:06Z [Info][app] Shutting down the server
+2024-10-27T16:31:07Z [Info][app] Storage connected successfully
+2024-10-27T16:31:07Z [Info][app] Server started successfully
+2024-10-27T16:32:00Z [Info][app] Shutting down the server
+2024-10-27T16:32:00Z [Info][app] Storage connected successfully
+2024-10-27T16:32:00Z [Info][app] Server started successfully
+2024-10-27T16:35:48Z [Info][app] Shutting down the server
+2024-10-27T16:35:50Z [Info][app] Storage connected successfully
+2024-10-27T16:35:50Z [Info][app] Server started successfully
