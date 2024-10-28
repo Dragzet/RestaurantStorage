@@ -1,8 +1,24 @@
+version: '3.8'
+
 services:
-  app:
+  traefik:
+    image: traefik:v2.9
+    command:
+      - "--api.insecure=true" # Включение панели управления (не рекомендуется для продакшена)
+      - "--providers.docker=true" # Включение Docker-провайдера
+      - "--entrypoints.web.address=:80" # Настройка точки входа на порт 80
+    ports:
+      - "8080:80"            # Порт для входа в Traefik (http://localhost)
+      - "80:8080"        # Порт для панели управления Traefik (http://localhost:8082)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Доступ к Docker сокету
+    networks:
+      - app_network
+
+  app1:
     build: backend
     ports:
-      - "8080:8080"
+      - "8081:8080" # Первый экземпляр приложения
     volumes:
       - ./logs:/root/logs
     networks:
@@ -14,6 +30,53 @@ services:
       - EMAIL_PORT=465
       - EMAIL_USER=system-project-management@yandex.ru
       - EMAIL_PASS=pjolfmygivbginka
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=PathPrefix(`/`)" # Маршрут для приложения
+      - "traefik.http.services.app.loadbalancer.server.port=8080" # Порт вашего приложения
+      - "traefik.http.services.app.loadbalancer.sticky=true" # Включение sticky session
+
+  app2:
+    build: backend
+    ports:
+      - "8082:8080" # Второй экземпляр приложения
+    volumes:
+      - ./logs:/root/logs
+    networks:
+      - app_network
+    depends_on:
+      - db
+    environment:
+      - EMAIL_HOST=smtp.yandex.ru
+      - EMAIL_PORT=465
+      - EMAIL_USER=system-project-management@yandex.ru
+      - EMAIL_PASS=pjolfmygivbginka
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=PathPrefix(`/`)" # Маршрут для приложения
+      - "traefik.http.services.app.loadbalancer.server.port=8080" # Порт вашего приложения
+      - "traefik.http.services.app.loadbalancer.sticky=true" # Включение sticky session
+
+  app3:
+    build: backend
+    ports:
+      - "8083:8080" # Второй экземпляр приложения
+    volumes:
+      - ./logs:/root/logs
+    networks:
+      - app_network
+    depends_on:
+      - db
+    environment:
+      - EMAIL_HOST=smtp.yandex.ru
+      - EMAIL_PORT=465
+      - EMAIL_USER=system-project-management@yandex.ru
+      - EMAIL_PASS=pjolfmygivbginka
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=PathPrefix(`/`)" # Маршрут для приложения
+      - "traefik.http.services.app.loadbalancer.server.port=8080" # Порт вашего приложения
+      - "traefik.http.services.app.loadbalancer.sticky=true" # Включение sticky session
 
   db:
     container_name: appDB
@@ -36,7 +99,7 @@ services:
     ports:
       - "3000:80"
     networks:
-        - app_network
+      - app_network
 
 volumes:
   data:
