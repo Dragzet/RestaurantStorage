@@ -66,3 +66,36 @@
 2024-10-27T16:35:48Z [Info][app] Shutting down the server
 2024-10-27T16:35:50Z [Info][app] Storage connected successfully
 2024-10-27T16:35:50Z [Info][app] Server started successfully
+2024-10-28T09:28:33Z [Info][app] Storage connected successfully
+2024-10-28T09:28:33Z [Info][app] Server started successfully
+2024-10-28T09:34:51Z [Info][app] Shutting down the server
+2024-10-28T09:35:07Z [Info][app] Storage connected successfully
+2024-10-28T09:35:07Z [Info][app] Server started successfully
+2024-10-28T09:38:56Z [Info][app] Shutting down the server
+2024-10-28T09:39:03Z [Info][app] Storage connected successfully
+2024-10-28T09:39:03Z [Info][app] Server started successfully
+2024-10-28T09:40:00Z [Error][app] Failed to add product%!(EXTRA string=error, *errors.errorString=ProductDB: AddProduct: Product already exists)
+2024-10-28T09:42:38Z [Info][app] Shutting down the server
+2024-10-28T09:43:34Z [Info][app] Storage connected successfully
+2024-10-28T09:43:34Z [Info][app] Server started successfully
+2024-10-28T09:55:43Z [Info][app] Shutting down the server
+2024-10-28T09:56:07Z [Info][app] Storage connected successfully
+2024-10-28T09:56:07Z [Info][app] Server started successfully
+2024-10-28T09:57:19Z [Info][app] Shutting down the server
+2024-10-28T09:57:26Z [Info][app] Storage connected successfully
+2024-10-28T09:57:27Z [Info][app] Server started successfully
+2024-10-28T09:58:45Z [Info][app] Shutting down the server
+2024-10-28T09:58:56Z [Info][app] Storage connected successfully
+2024-10-28T09:58:56Z [Info][app] Server started successfully
+2024-10-28T10:00:39Z [Info][app] Shutting down the server
+2024-10-28T10:00:51Z [Info][app] Storage connected successfully
+2024-10-28T10:00:51Z [Info][app] Server started successfully
+2024-10-28T10:02:31Z [Info][app] Shutting down the server
+2024-10-28T10:02:38Z [Info][app] Storage connected successfully
+2024-10-28T10:02:38Z [Info][app] Server started successfully
+2024-10-28T10:04:07Z [Info][app] Shutting down the server
+2024-10-28T10:04:14Z [Info][app] Storage connected successfully
+2024-10-28T10:04:14Z [Info][app] Server started successfully
+2024-10-28T10:06:37Z [Info][app] Shutting down the server
+2024-10-28T10:06:51Z [Info][app] Storage connected successfully
+2024-10-28T10:06:51Z [Info][app] Server started successfully
