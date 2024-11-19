@@ -1,0 +1,120 @@
+definitions:
+  models.ProductModel:
+    properties:
+      amount:
+        type: integer
+      image:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  title: Restaurant Storage API
+  version: "1.0"
+paths:
+  /product:
+    delete:
+      description: Deletes a product from the storage by name.
+      parameters:
+      - description: Product name
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'status: ok'
+          schema:
+            type: string
+        "400":
+          description: 'error: Failed to get name'
+          schema:
+            type: string
+        "500":
+          description: 'error: Failed to delete product'
+          schema:
+            type: string
+      summary: Delete a product
+      tags:
+      - Products
+    get:
+      description: Retrieves the list of all products in the storage.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of products
+          schema:
+            items:
+              $ref: '#/definitions/models.ProductModel'
+            type: array
+        "500":
+          description: 'error: Failed to get products list'
+          schema:
+            type: string
+      summary: Get list of products
+      tags:
+      - Products
+    post:
+      consumes:
+      - application/json
+      description: Adds a new product to the storage.
+      parameters:
+      - description: Product to add
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.ProductModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'status: ok'
+          schema:
+            type: string
+        "400":
+          description: 'error: Failed to bind product'
+          schema:
+            type: string
+        "500":
+          description: 'error: Failed to add product'
+          schema:
+            type: string
+      summary: Add a new product
+      tags:
+      - Products
+    put:
+      consumes:
+      - application/json
+      description: Updates the details of an existing product.
+      parameters:
+      - description: Product to update
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.ProductModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'status: ok'
+          schema:
+            type: string
+        "400":
+          description: 'error: Failed to bind product'
+          schema:
+            type: string
+        "500":
+          description: 'error: Failed to change product'
+          schema:
+            type: string
+      summary: Update a product
+      tags:
+      - Products
+swagger: "2.0"

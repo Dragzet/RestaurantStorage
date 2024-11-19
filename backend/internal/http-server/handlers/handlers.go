@@ -35,7 +35,6 @@ func (h *Handler) registerProductRoutes() {
 	h.Router.PUT("/product", h.ChangeProduct)
 	h.Router.DELETE("/product", h.DeleteProduct)
 	h.Router.OPTIONS("/product", h.Options)
-	//h.Router.GET("/product/:name", h.GetProduct)
 }
 
 func NewHandler(router *gin.Engine, serv *service.Service, logger *log.Logger) *Handler {

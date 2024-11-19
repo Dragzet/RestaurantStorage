@@ -12,7 +12,4 @@ down:
 logs:
 	docker-compose logs -f
 
-tests:
-	cd internal/service && go test -v --cover && cd ../..
-
 .DEFAULT_GOAL := up

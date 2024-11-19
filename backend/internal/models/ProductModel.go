@@ -1,5 +1,6 @@
 package models
 
+// swagger:model ProductModel
 type ProductModel struct {
 	ID     int    `json:"id" swaggerignore:"true"`
 	Name   string `json:"name"`

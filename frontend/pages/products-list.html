@@ -7,125 +7,124 @@
   <style>
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none; /* Для Chrome и Safari */
-      margin: 0; /* Убрать отступы */
+      -webkit-appearance: none;
+      margin: 0;
   }
 
   input[type=number] {
-      -moz-appearance: textfield; /* Для Firefox */
+      -moz-appearance: textfield;
   }
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa; /* Светлый фон */
+      background-color: #f8f9fa;
       margin: 0;
       padding: 20px;
     }
 
     h1 {
-      text-align: center; /* Заголовок по центру */
+      text-align: center;
     }
 
     .products-list {
       display: grid;
       list-style-type: none;
       padding: 0;
-      grid-template-columns: repeat(4, 1fr); /* 4 колонки */
-      gap: 20px; /* Промежуток между ячейками */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .product-item {
-      background-color: #fff; /* Белый фон */
-      border: 1px solid #ddd; /* Светлая рамка */
-      border-radius: 8px; /* Закругленные углы */
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       padding: 10px;
       display: flex;
       justify-content: center;
-      flex-direction: column; /* Вертикальная компоновка */
-      align-items: center; /* Центрируем содержимое */
-      text-align: center; /* Центрируем текст */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       height: 300px;
       width: 300px;
     }
 
     .product-image {
-      width: 100px; /* Ширина изображения */
-      height: 100px; /* Высота изображения */
-      object-fit: cover; /* Обрезка, если изображение не подходит */
-      border-radius: 4px; /* Закругленные углы для изображения */
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
     }
 
     .product-title {
-      margin: 10px 0 5px; /* Отступы */
-      font-size: 1.2em; /* Размер шрифта заголовка */
+      margin: 10px 0 5px;
+      font-size: 1.2em;
     }
 
     .product-amount {
-      color: #666; /* Серый цвет для количества */
-      font-size: 0.9em; /* Уменьшаем размер шрифта */
-      margin-bottom: 10px; /* Отступ внизу */
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 10px;
     }
 
     .product-change-input {
-      width: 50px; /* Ширина поля ввода */
-      margin-bottom: 10px; /* Отступ внизу */
+      width: 50px;
+      margin-bottom: 10px;
     }
 
     .btn {
-      padding: 10px; /* Отступы для кнопок */
-      border: none; /* Убираем рамку */
-      border-radius: 4px; /* Закругленные углы для кнопок */
-      cursor: pointer; /* Указываем, что кнопки кликабельные */
-      margin: 5px; /* Отступы между кнопками */
-      color: #fff; /* Цвет текста */
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+      color: #fff;
     }
 
     .add-btn {
-      background-color: #007bff; /* Синий цвет для кнопки "Добавить" */
+      background-color: #007bff;
     }
 
     .delete-btn {
-      background-color: #dc3545; /* Красный цвет для кнопки "Удалить" */
+      background-color: #dc3545;
     }
 
     .remove-btn {
-      background-color: #dc3545; /* Красный цвет для кнопки "Удалить" */
+      background-color: #dc3545;
     }
 
     .error {
-      color: red; /* Цвет для сообщений об ошибках */
-      text-align: center; /* Центрируем текст ошибки */
-      margin-bottom: 20px; /* Отступ снизу */
+      color: red;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    /* Стили для карточки "Добавить новый продукт" */
+
     .add-product-item {
-      background-color: #e7f1ff; /* Цвет фона для карточки */
-      border: 2px dashed #007bff; /* Дашированная рамка */
+      background-color: #e7f1ff;
+      border: 2px dashed #007bff;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer; /* Указываем, что карточка кликабельная */
+      cursor: pointer;
       height: 300px;
-      width: 300px; /* Высота карточки */
+      width: 300px;
     }
 
     .add-product-item:hover {
-      background-color: #d0e1ff; /* Цвет при наведении */
+      background-color: #d0e1ff;
     }
 
     .add-product-title {
-      font-size: 1.5em; /* Размер шрифта заголовка карточки */
-      color: #007bff; /* Цвет заголовка */
+      font-size: 1.5em;
+      color: #007bff;
     }
   </style>
 </head>
 <body>
   <h1>Продукты на складе</h1>
   <div id="error" class="error"></div>
-  <ul id="products-list" class="products-list"></ul> <!-- Обновлено на <ul> для списков -->
-
+  <ul id="products-list" class="products-list"></ul>
   <script>
     async function fetchProducts() {
       try {
@@ -143,17 +142,17 @@
 
     function displayProducts(products) {
       const productsList = document.getElementById('products-list');
-      productsList.innerHTML = ''; // Очистка списка продуктов
+      productsList.innerHTML = '';
       
       console.log(products.length);
 
       if (!products.length) {
         const addProductItem = document.createElement('li');
         addProductItem.className = 'add-product-item';
-        addProductItem.innerHTML = '<h2 class="add-product-title">+</h2>'; // Плюсик
+        addProductItem.innerHTML = '<h2 class="add-product-title">+</h2>';
 
         addProductItem.onclick = () => {
-          window.location.href = '/create-product.html'; // Переход на страницу создания нового продукта
+          window.location.href = '/create-product.html';
         };
 
         productsList.appendChild(addProductItem);
@@ -236,19 +235,17 @@
         productsList.appendChild(listItem);
       });
 
-      // Добавление карточки для создания нового продукта
       const addProductItem = document.createElement('li');
       addProductItem.className = 'add-product-item';
-      addProductItem.innerHTML = '<h2 class="add-product-title">+</h2>'; // Плюсик
+      addProductItem.innerHTML = '<h2 class="add-product-title">+</h2>';
 
       addProductItem.onclick = () => {
-        window.location.href = '/create-product.html'; // Переход на страницу создания нового продукта
+        window.location.href = '/create-product.html';
       };
 
       productsList.appendChild(addProductItem);
     }
 
-    // Запуск функции для получения продуктов при загрузке страницы
     fetchProducts();
   </script>
 </body>

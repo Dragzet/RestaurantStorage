@@ -1,6 +1,7 @@
 package main
 
 import (
+	docs "RestaurantStorage/docs"
 	"RestaurantStorage/internal/config"
 	"RestaurantStorage/internal/http-server/handlers"
 	"RestaurantStorage/internal/repository"
@@ -12,6 +13,8 @@ import (
 	"github.com/gin-gonic/gin"
 	log "github.com/go-ozzo/ozzo-log"
 	"github.com/joho/godotenv"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"net/http"
 	"os"
 	"os/signal"
@@ -25,6 +28,9 @@ func init() {
 	}
 }
 
+// @title           Restaurant Storage API
+// @version         1.0
+// @host      localhost:8080
 func main() {
 	cfg, err := config.LoadConfig()
 	emailHost, emailPort, emailUser, emailPass := os.Getenv("EMAIL_HOST"), os.Getenv("EMAIL_PORT"), os.Getenv("EMAIL_USER"), os.Getenv("EMAIL_PASS")
@@ -48,6 +54,8 @@ func main() {
 	CORSconfig := cors.DefaultConfig()
 	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000"}
 	router.Use(cors.New(CORSconfig))
+	docs.SwaggerInfo.BasePath = "/"
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	serv := service.NewService(repo)
 	handler := handlers.NewHandler(router, serv, logger)
 
