@@ -8,11 +8,9 @@ import (
 	"RestaurantStorage/internal/service"
 	"RestaurantStorage/internal/storage/PostgreSQL"
 	"context"
-	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	log "github.com/go-ozzo/ozzo-log"
-	"github.com/joho/godotenv"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"net/http"
@@ -21,22 +19,13 @@ import (
 	"syscall"
 )
 
-func init() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		fmt.Println("Error loading .env file")
-	}
-}
-
 // @title           Restaurant Storage API
 // @version         1.0
 // @host      localhost:8080
 func main() {
 	cfg, err := config.LoadConfig()
-	emailHost, emailPort, emailUser, emailPass := os.Getenv("EMAIL_HOST"), os.Getenv("EMAIL_PORT"), os.Getenv("EMAIL_USER"), os.Getenv("EMAIL_PASS")
-
-	if err != nil || emailHost == "" || emailPort == "" || emailUser == "" || emailPass == "" {
-		panic("Error loading config and secrets")
+	if err != nil {
+		panic(err)
 	}
 
 	logger := setupLogger(cfg.LogsPath)
