@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products</title>
   <style>
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
-  }
+    }
 
-  input[type=number] {
+    input[type=number] {
       -moz-appearance: textfield;
-  }
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -99,7 +99,6 @@
       margin-bottom: 20px;
     }
 
-
     .add-product-item {
       background-color: #e7f1ff;
       border: 2px dashed #007bff;
@@ -127,8 +126,18 @@
   <ul id="products-list" class="products-list"></ul>
   <script>
     async function fetchProducts() {
+      const token = localStorage.getItem('token'); 
+      if (!token) {
+        document.getElementById('error').textContent = 'Unauthorized. Please log in first.';
+        return;
+      }
+
       try {
-        const response = await fetch('http://localhost:8080/product');
+        const response = await fetch('http://localhost:8080/product', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
         if (!response.ok) throw new Error('Network response was not ok');
 
         const products = await response.json();
@@ -193,8 +202,9 @@
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
               },
-              body: JSON.stringify({name: product.name, amount: product.amount + parseInt(input.value), image: product.image}),
+              body: JSON.stringify({ name: product.name, amount: product.amount + parseInt(input.value), image: product.image }),
             });
             if (!response.ok) throw new Error('Network response was not ok');
 
@@ -216,6 +226,7 @@
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
               },
             });
             if (!response.ok) throw new Error('Network response was not ok');

@@ -115,9 +115,17 @@
       const amount = parseInt(document.getElementById('productAmount').value, 10);
       const image = document.getElementById('productImage').value.trim();
       const errorDiv = document.getElementById('error');
-      
+
+      // Проверка на обязательные поля
       if (!name || isNaN(amount) || !image) {
         errorDiv.textContent = 'Пожалуйста, заполните все поля корректно.';
+        return;
+      }
+
+      // Получение токена из localStorage
+      const token = localStorage.getItem('token');
+      if (!token) {
+        errorDiv.textContent = 'Необходимо авторизоваться.';
         return;
       }
 
@@ -126,13 +134,14 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Добавление токена в заголовок
           },
           body: JSON.stringify({ name, amount, image }),
         });
 
         if (!response.ok) throw new Error('Ошибка сети');
 
-        window.location.href = 'products-list.html';
+        window.location.href = 'products-list.html'; // Переход на страницу списка продуктов
       } catch (error) {
         errorDiv.textContent = 'Не удалось добавить продукт. Попробуйте позже.';
         console.error('Ошибка добавления продукта:', error);

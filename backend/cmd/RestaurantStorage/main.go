@@ -4,6 +4,7 @@ import (
 	docs "RestaurantStorage/docs"
 	"RestaurantStorage/internal/config"
 	"RestaurantStorage/internal/http-server/handlers"
+	MW "RestaurantStorage/internal/http-server/middleware"
 	"RestaurantStorage/internal/repository"
 	"RestaurantStorage/internal/service"
 	"RestaurantStorage/internal/storage/PostgreSQL"
@@ -43,10 +44,11 @@ func main() {
 	CORSconfig := cors.DefaultConfig()
 	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000"}
 	router.Use(cors.New(CORSconfig))
+	authMW, err := MW.GetAuthMW()
 	docs.SwaggerInfo.BasePath = "/"
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	serv := service.NewService(repo)
-	handler := handlers.NewHandler(router, serv, logger)
+	handler := handlers.NewHandler(router, serv, logger, authMW)
 
 	signalChan := make(chan os.Signal, 1)
 	signal.Notify(signalChan, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)

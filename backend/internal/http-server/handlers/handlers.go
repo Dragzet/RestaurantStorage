@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"RestaurantStorage/internal/service"
+	jwt "github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
 	log "github.com/go-ozzo/ozzo-log"
 	"net/http"
@@ -11,14 +12,12 @@ type Handler struct {
 	Router  *gin.Engine
 	service *service.Service
 	logger  *log.Logger
+	authMW  *jwt.GinJWTMiddleware
 	ProductHandler
 }
 
 func (h *Handler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
 	h.Router.ServeHTTP(writer, request)
-}
-
-type UserHandler interface {
 }
 
 type ProductHandler interface {
@@ -29,21 +28,29 @@ type ProductHandler interface {
 	GetProduct(c *gin.Context)
 }
 
-func (h *Handler) registerProductRoutes() {
-	h.Router.POST("/product", h.AddProduct)
-	h.Router.GET("/product", h.GetProductsList)
-	h.Router.PUT("/product", h.ChangeProduct)
-	h.Router.DELETE("/product", h.DeleteProduct)
+func (h *Handler) registerRoutes() {
+	h.Router.POST("/login", h.authMW.LoginHandler)
+
+	authGroup := h.Router.Group("/product")
+	authGroup.Use(h.authMW.MiddlewareFunc())
+	{
+		authGroup.POST("", h.AddProduct)
+		authGroup.GET("", h.GetProductsList)
+		authGroup.PUT("", h.ChangeProduct)
+		authGroup.DELETE("", h.DeleteProduct)
+	}
+
 	h.Router.OPTIONS("/product", h.Options)
 }
 
-func NewHandler(router *gin.Engine, serv *service.Service, logger *log.Logger) *Handler {
+func NewHandler(router *gin.Engine, serv *service.Service, logger *log.Logger, authMW *jwt.GinJWTMiddleware) *Handler {
 	handler := &Handler{
 		Router:  router,
 		service: serv,
 		logger:  logger,
+		authMW:  authMW,
 	}
-	handler.registerProductRoutes()
+	handler.registerRoutes()
 	return handler
 }
 
