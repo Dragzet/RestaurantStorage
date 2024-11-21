@@ -203,13 +203,16 @@
               document.getElementById('error').textContent = 'Unauthorized. Please log in first.';
               return;
             }
+
+            const amount = Math.max(0, product.amount + parseInt(input.value));
+
             const response = await fetch(`http://213.108.20.206:8080/product`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
               },
-              body: JSON.stringify({ name: product.name, amount: product.amount + parseInt(input.value), image: product.image }),
+              body: JSON.stringify({ name: product.name, amount: amount, image: product.image }),
             });
             if (!response.ok) throw new Error('Network response was not ok');
 
