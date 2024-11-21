@@ -126,7 +126,6 @@
         image = "https://avatars.mds.yandex.net/i?id=1c426755b17e857a01c4c6b91e8ac8b5e3c74cbf-9149794-images-thumbs&n=13"
       }
 
-      // Получение токена из localStorage
       const token = localStorage.getItem('token');
       if (!token) {
         errorDiv.textContent = 'Необходимо авторизоваться.';
@@ -134,18 +133,18 @@
       }
 
       try {
-        const response = await fetch('http://localhost:8080/product', {
+        const response = await fetch('http://213.108.20.206:8080/product', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}` // Добавление токена в заголовок
+            'Authorization': `Bearer ${token}` 
           },
           body: JSON.stringify({ name, amount, image }),
         });
 
         if (!response.ok) throw new Error('Ошибка сети');
 
-        window.location.href = 'products-list.html'; // Переход на страницу списка продуктов
+        window.location.href = 'products-list.html'; 
       } catch (error) {
         errorDiv.textContent = 'Не удалось добавить продукт. Попробуйте позже.';
         console.error('Ошибка добавления продукта:', error);

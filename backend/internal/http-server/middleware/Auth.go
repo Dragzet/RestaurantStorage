@@ -14,7 +14,7 @@ type Login struct {
 
 var identityKey = "key"
 
-func GetAuthMW() (*jwt.GinJWTMiddleware, error) {
+func GetAuthMW(targetUsername, targetPassword string) (*jwt.GinJWTMiddleware, error) {
 	return jwt.New(&jwt.GinJWTMiddleware{
 		Realm:       "admin zone",
 		Key:         []byte("secret"),
@@ -40,14 +40,14 @@ func GetAuthMW() (*jwt.GinJWTMiddleware, error) {
 			username := loginVals.Username
 			password := loginVals.Password
 
-			if username == "admin" && password == "admin" {
+			if username == targetUsername && password == targetPassword {
 				return &Login{Username: username}, nil
 			}
 			return nil, jwt.ErrFailedAuthentication
 		},
 
 		Authorizator: func(data interface{}, c *gin.Context) bool {
-			if user, ok := data.(*Login); ok && user.Username == "admin" {
+			if user, ok := data.(*Login); ok && user.Username == targetUsername {
 				return true
 			}
 			return false

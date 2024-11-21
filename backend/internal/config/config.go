@@ -11,11 +11,17 @@ type Config struct {
 	StoragePath string `yaml:"storage_path" env-required:"true"`
 	LogsPath    string `yaml:"logs_path" env-required:"true"`
 	HttpServer  `yaml:"http_server"`
+	User        `yaml:"user"`
 }
 
 type HttpServer struct {
 	Address string        `yaml:"address" env-default:"localhost:8080"`
 	Timeout time.Duration `yaml:"timeout" env-default:"10s"`
+}
+
+type User struct {
+	Username string `yaml:"username" env-default:"admin"`
+	Password string `yaml:"password" env-default:"admin"`
 }
 
 func LoadConfig() (*Config, error) {

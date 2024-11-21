@@ -42,10 +42,10 @@ func main() {
 	repo := repository.NewDB(storage)
 	router := gin.Default()
 	CORSconfig := cors.DefaultConfig()
-	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000"}
+	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000", "http://213.108.20.206:3000"}
 	CORSconfig.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	router.Use(cors.New(CORSconfig))
-	authMW, err := MW.GetAuthMW()
+	authMW, err := MW.GetAuthMW(cfg.Username, cfg.Password)
 	docs.SwaggerInfo.BasePath = "/"
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	serv := service.NewService(repo)

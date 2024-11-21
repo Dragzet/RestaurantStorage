@@ -3,3 +3,7 @@ logs_path: "logs/app.logs"
 http_server:
   address: "0.0.0.0:8080"
   timeout: 4s
+
+user:
+  username: "admin"
+  password: "admin"
