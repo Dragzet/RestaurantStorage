@@ -198,6 +198,11 @@
         changeButton.className = 'btn add-btn';
         changeButton.onclick = async () => {
           try {
+            const token = localStorage.getItem('token'); 
+            if (!token) {
+              document.getElementById('error').textContent = 'Unauthorized. Please log in first.';
+              return;
+            }
             const response = await fetch(`http://localhost:8080/product`, {
               method: 'PUT',
               headers: {
@@ -222,6 +227,11 @@
         removeButton.className = 'btn remove-btn';
         removeButton.onclick = async () => {
           try {
+            const token = localStorage.getItem('token'); 
+            if (!token) {
+              document.getElementById('error').textContent = 'Unauthorized. Please log in first.';
+              return;
+            }
             const response = await fetch(`http://localhost:8080/product?name=` + product.name, {
               method: 'DELETE',
               headers: {

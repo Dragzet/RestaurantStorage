@@ -113,13 +113,17 @@
     async function addProduct() {
       const name = document.getElementById('productName').value.trim();
       const amount = parseInt(document.getElementById('productAmount').value, 10);
-      const image = document.getElementById('productImage').value.trim();
+      let image = document.getElementById('productImage').value.trim();
       const errorDiv = document.getElementById('error');
 
       // Проверка на обязательные поля
       if (!name || isNaN(amount) || !image) {
         errorDiv.textContent = 'Пожалуйста, заполните все поля корректно.';
         return;
+      }
+
+      if (image.indexOf('http') !== 0) {
+        image = "https://avatars.mds.yandex.net/i?id=1c426755b17e857a01c4c6b91e8ac8b5e3c74cbf-9149794-images-thumbs&n=13"
       }
 
       // Получение токена из localStorage

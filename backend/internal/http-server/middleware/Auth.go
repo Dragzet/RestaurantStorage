@@ -59,14 +59,12 @@ func GetAuthMW() (*jwt.GinJWTMiddleware, error) {
 
 		PayloadFunc: func(data interface{}) jwt.MapClaims {
 			if user, ok := data.(*Login); ok {
-				// Возвращаем payload с необходимыми данными
 				return jwt.MapClaims{
 					"username": user.Username,
 					"exp":      time.Now().Add(4 * time.Hour).Unix(),
 					"iat":      time.Now().Unix(),
 				}
 			}
-			// Если не удалось привести data к типу Login, возвращаем пустой MapClaims
 			return jwt.MapClaims{}
 		},
 

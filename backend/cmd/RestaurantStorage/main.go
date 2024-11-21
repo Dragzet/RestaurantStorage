@@ -43,6 +43,7 @@ func main() {
 	router := gin.Default()
 	CORSconfig := cors.DefaultConfig()
 	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000"}
+	CORSconfig.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	router.Use(cors.New(CORSconfig))
 	authMW, err := MW.GetAuthMW()
 	docs.SwaggerInfo.BasePath = "/"
