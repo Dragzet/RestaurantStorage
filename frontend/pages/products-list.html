@@ -217,7 +217,7 @@
             if (!response.ok) throw new Error('Network response was not ok');
 
             const updatedProduct = await response.json();
-            product.amount = product.amount + parseInt(input.value);
+            product.amount = Math.max(0, product.amount + parseInt(input.value));
             amount.textContent = `Кол-во: ${product.amount}`;
           } catch (error) {
             document.getElementById('error').textContent = 'Failed to update product. Please try again later.';
