@@ -42,7 +42,7 @@ func main() {
 	repo := repository.NewDB(storage)
 	router := gin.Default()
 	CORSconfig := cors.DefaultConfig()
-	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000", "http://213.108.20.206:3000"}
+	CORSconfig.AllowOrigins = []string{"http://google.com", "http://localhost:3000", "http://147.45.145.15:3000"}
 	CORSconfig.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	router.Use(cors.New(CORSconfig))
 	authMW, err := MW.GetAuthMW(cfg.Username, cfg.Password)
